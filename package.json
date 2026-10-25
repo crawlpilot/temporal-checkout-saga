@@ -1,0 +1,29 @@
+{
+  "name": "temporal-checkout-saga",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A checkout saga on Temporal (TypeScript): retries, compensations and a worker you can kill. Companion to https://crawlpilot.tech/blog/temporal-durable-execution-saga",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p .",
+    "demo": "npm run build && node lib/src/demo.js",
+    "server": "npm run build && node lib/src/server.js",
+    "worker": "npm run build && node lib/src/worker.js",
+    "checkout": "node lib/src/start.js",
+    "test": "npm run build && node --test \"lib/test/**/*.test.js\""
+  },
+  "dependencies": {
+    "@temporalio/activity": "1.24.0",
+    "@temporalio/client": "1.24.0",
+    "@temporalio/proto": "1.24.0",
+    "@temporalio/testing": "1.24.0",
+    "@temporalio/worker": "1.24.0",
+    "@temporalio/workflow": "1.24.0",
+    "long": "^5.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
